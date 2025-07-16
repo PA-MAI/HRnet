@@ -67,7 +67,6 @@ export default function CreateEmployee()  {
             <label htmlFor="city">City</label>
             <input id="city" value={formData.city} onChange={handleChange} />
           </div>
-          <br></br>
           <div>
             <label htmlFor="state">State</label>
             <select id="state" value={formData.state} onChange={handleChange}>
@@ -92,7 +91,7 @@ export default function CreateEmployee()  {
           <option>Legal</option>
         </select>
 
-        <button type="submit">Save</button>
+        <button className="submit" type="submit">Save</button>
       </form>
       </div>
       </>
