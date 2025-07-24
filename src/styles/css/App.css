@@ -123,7 +123,7 @@ legend {
 }
 .main-logo-image {
   height: 60px;
-  width: auto;
+  width: 170px;
 }
 .title h1 {
   margin: 40px;
@@ -135,7 +135,7 @@ legend {
 }
 .container h1 {
   color: rgb(74, 182, 172);
-  font-size: 35px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 .container h2 {
