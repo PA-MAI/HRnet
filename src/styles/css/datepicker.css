@@ -1,0 +1,213 @@
+.custom-calendar{
+  width: 260px;
+  padding:5px;
+  height:310px;
+  background-color: white;
+}
+.custom-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.1rem;
+  background-color: white;
+}
+
+.react-datepicker__aria-live{
+  display: none;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  padding:5px;
+}
+
+.nav-arrow:hover {
+  color: black;
+}
+
+/* Icône maison */
+.home-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: gray;
+  margin-top: 0;
+  padding:5px;
+}
+
+.home-button:hover {
+  color: black;
+}
+
+/* Sélecteurs mois/année */
+.month-select,
+.year-select {
+  padding: 0.25rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  max-width:50px ;
+}
+
+.custom-calendar {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.react-datepicker__week {
+  display: flex;
+  justify-content: space-between;
+}
+
+.react-datepicker__day {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+.react-datepicker__day-names{
+  display: flex;
+   color: #333;
+  justify-content: space-between;
+  margin:5px;
+  
+}
+.react-datepicker__day-name{
+  
+  width: 1.5rem;;
+  height: 1.5rem;
+  font-weight: 700;
+  align-self: center;
+  align-content: center;
+}
+.react-datepicker__month {
+  background-color: rgb(211, 209, 209);
+  border: 1px solid #ccc;
+  /*gap:1px;*/
+  
+}
+.react-datepicker__day--outside-month {
+  color: #ccc;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.react-datepicker__day--selected {
+  background-color: orange !important;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.underlined {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+.dropdowns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  user-select: none;
+}
+.chevron {
+  font-size: 0.75rem;
+  color: gray;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem 0;
+}
+
+.dropdown-menu li {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  color: black;
+}
+
+.dropdown-menu li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.dropdown-menu .active {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Jour par défaut */
+.day-default {
+  color: #333;
+  background-color: #eceaea;
+  padding: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Hover */
+.day-default:hover {
+  background-color: orange;
+  color: white;
+}
+
+/* Aujourd'hui */
+.day-today {
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+.react-datepicker__month {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}

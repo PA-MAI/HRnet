@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './Redux/Store';
 
 import Header from './components/Header'
-import './styles/css/index.css'
+import './styles/css/app.css'
 import CreateEmployee from './pages/Create-Employee/'
 import EmployeeList from './pages/Employee-List/'
 
