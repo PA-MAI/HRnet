@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './Redux/Store';
 
+import TestDropdown from './pages/Tests/TestDropdown'
+
 import Header from './components/Header'
 import './styles/css/app.css'
 import CreateEmployee from './pages/Create-Employee/'
@@ -17,6 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Routes> 
           <Route path="/" element={<CreateEmployee />} />
           <Route path="/Employee-List" element={<EmployeeList />} />
+          <Route path="/tests" element={<TestDropdown />} />
         </Routes>
       </BrowserRouter>
     </Provider>

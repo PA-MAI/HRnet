@@ -3,16 +3,20 @@ import { useDispatch } from "react-redux";
 import { addEmployee } from "../../Redux/employeeSlice";
 import { Link } from "react-router-dom";
 
-import states from "../../data/states";
-import DatePicker from "../../components/DatePicker";
-import Dropdown from "../../components/Dropdown";
-import Modal from "../../components/Modal";
+//import plugin
+import { Dropdown } from 'react-drpdwn-ui';
 
+//import data
+import states from "../../data/states";
+import departements from "../../data/departements";
+
+//import composants plugins
+import DatePicker from "../../components/DatePicker";
+import Modal from "../../components/Modal";
 
 
 export default function CreateEmployee() {
   const dispatch = useDispatch();
-  
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -26,36 +30,36 @@ export default function CreateEmployee() {
     department: "Sales",
   });
 
+// display modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+//save changes
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
+    console.log("Dropdown changed:", e.target.value);
   };
 
+//submit form
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Form submitted with data:", formData);
     dispatch(addEmployee(formData));
     setIsModalOpen(true);
   };
 
+// close modal
   const handleModalClose = () => {
     setIsModalOpen(false);
-    //navigate('/employee-list');
+    console.log("Modal closed");
   };
 
-  const statesOptions = states.map((s) => ({
-    label: s.name,
-    value: s.abbreviation,
-  }));
+//data for dropdown
+  const statesOptions = states.map((s) => ({ label: s.name, value: s.abbreviation }));
+  const departmentOptions = departements.map((d) => ({ label: d, value: d }));
 
-  const departmentOptions = [
-    "Sales",
-    "Marketing",
-    "Engineering",
-    "Human Resources",
-    "Legal",
-  ].map((d) => ({ label: d, value: d }));
+
+
 
   return (
     <>

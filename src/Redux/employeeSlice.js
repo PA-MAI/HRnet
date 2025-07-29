@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   list: [],
 };
-
+// add employee in state
 const employeeSlice = createSlice({
   name: 'employee',
   initialState,

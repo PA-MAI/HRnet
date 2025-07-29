@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+//import data
 import { employeeColumns } from "../../data/columns";
+//import composant plugin
 import DataTable from "../../components/DataTable";
 
 

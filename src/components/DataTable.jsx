@@ -1,6 +1,6 @@
 import React from "react";
 import DataTableLib from "react-data-table-component";
-
+// customize datatable
 const customStyles = {
   table: {
     style: {
@@ -39,21 +39,21 @@ export default function DataTable({
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = data.slice(indexOfFirstRow, indexOfLastRow);
-
+// set choice for row number
   const handleRowsPerPageChange = (e) => {
     setRowsPerPage(Number(e.target.value));
     setCurrentPage(1);
   };
-
+//set previous page
   const handlePrevious = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
-
+//set next page
   const handleNext = () => {
     const maxPage = Math.ceil(totalRows / rowsPerPage);
     setCurrentPage((prev) => Math.min(prev + 1, maxPage));
   };
-
+// set page number
   const start = totalRows === 0 ? 0 : indexOfFirstRow + 1;
   const end = Math.min(indexOfLastRow, totalRows);
 

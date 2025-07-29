@@ -6,6 +6,7 @@
   padding: 0;
   text-align: center;
 }
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -149,9 +150,7 @@ label {
   margin-bottom: 10px;
   margin-right: 10px;
 }
-.dates__picker {
-  text-align: left;
-}
+
 .dropdown {
   text-align: left;
 }
@@ -212,7 +211,7 @@ select {
 }
 .pagination__button {
   cursor: default;
-  color: #8f8e8e;
+  color: #c3bdbd;
   border: 1px solid transparent;
   background: transparent;
   box-shadow: none;
@@ -344,7 +343,7 @@ select {
   color: black;
 }
 
-/* Icône maison */
+/* Home Icon */
 .home-button {
   background: none;
   border: none;
@@ -359,7 +358,7 @@ select {
   color: black;
 }
 
-/* Sélecteurs mois/année */
+/* Select month/year */
 .month-select,
 .year-select {
   padding: 0.25rem;
@@ -430,6 +429,8 @@ select {
   font-size: 1rem;
   color: black;
 }
+
+
 .dropdowns {
   display: flex;
   align-items: center;
@@ -507,6 +508,8 @@ select {
   flex-direction: column;
   gap: 0.3rem;
 }
+
+
 @keyframes fadeIn {
   from {
     transform: scale(0.95);
