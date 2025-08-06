@@ -1,16 +1,18 @@
 {
   "name": "hrnet-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
+  "author": "Pa-Mai",
+  "description": "company internal application to create and view employee records.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview:soutenance": "vite build && vite preview",
     "lint": "eslint .",
     "preview": "vite preview"
-    
   },
+
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.9.0",
@@ -25,6 +27,7 @@
     "react-router-dom": "^7.6.0",
     "styled-components": "^6.1.19"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",

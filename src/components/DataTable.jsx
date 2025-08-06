@@ -1,11 +1,13 @@
 import React from "react";
 import DataTableLib from "react-data-table-component";
-// customize datatable
+
+// Customize DataTable appearance
 const customStyles = {
   table: {
     style: {
       display: "flex",
       border: "1px solid #ccc",
+      minWidth: '800px', 
     },
   },
   rows: {
@@ -23,8 +25,14 @@ const customStyles = {
       lineHeight: "1.2em",
     },
   },
+    tableWrapper: {
+    style: {
+      overflowX: "auto",
+    },
+  },
 };
 
+// Component to render a paginated, searchable table
 export default function DataTable({
   columns,
   data,
@@ -39,27 +47,32 @@ export default function DataTable({
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = data.slice(indexOfFirstRow, indexOfLastRow);
-// set choice for row number
+
+
+
   const handleRowsPerPageChange = (e) => {
     setRowsPerPage(Number(e.target.value));
     setCurrentPage(1);
   };
-//set previous page
+
+ 
   const handlePrevious = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
-//set next page
+
+
   const handleNext = () => {
     const maxPage = Math.ceil(totalRows / rowsPerPage);
     setCurrentPage((prev) => Math.min(prev + 1, maxPage));
   };
-// set page number
+  // Compute visible range of rows
   const start = totalRows === 0 ? 0 : indexOfFirstRow + 1;
   const end = Math.min(indexOfLastRow, totalRows);
 
   return (
     <div className="datatables__wrapper">
       <div className="employee__table">
+        {/* Header: Selection of the number of entries and search field*/}
         <div className="datatables__top">
           <div className="datatables__length">
             <label>
@@ -89,16 +102,18 @@ export default function DataTable({
             </label>
           </div>
         </div>
-
-        <DataTableLib
-          columns={columns}
-          data={currentRows}
-          responsive
-          highlightOnHover
-          customStyles={customStyles}
-          noHeader
-        />
-
+        {/* DataTableLib component with filtered rows*/}
+        <div style={{ overflowX: "auto", width: "100%" }}>
+          <DataTableLib
+            columns={columns}
+            data={currentRows}
+            responsive
+            highlightOnHover
+            customStyles={customStyles}
+            noHeader
+            />
+        </div>
+        {/* Footer: information and pagination */}
         <div className="datatables__bottom">
           <div className="datatables__info" role="status" aria-live="polite">
             Showing {start} to {end} of {totalRows} entries

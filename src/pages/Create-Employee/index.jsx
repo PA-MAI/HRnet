@@ -3,21 +3,24 @@ import { useDispatch } from "react-redux";
 import { addEmployee } from "../../Redux/employeeSlice";
 import { Link } from "react-router-dom";
 
-//import plugin
+// Import custom dropdown library
 import { Dropdown } from 'react-drpdwn-ui';
 
 //import data
 import states from "../../data/states";
 import departements from "../../data/departements";
 
-//import composants plugins
+// Import custom components
 import DatePicker from "../../components/DatePicker";
 import Modal from "../../components/Modal";
 
-
+/**
+ * Component for creating a new employee.
+ * Renders a form to input employee details and dispatches data to Redux store.
+ */
 export default function CreateEmployee() {
   const dispatch = useDispatch();
-
+  // Local state for form inputs
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,18 +32,24 @@ export default function CreateEmployee() {
     zipCode: "",
     department: "Sales",
   });
-
-// display modal
+// Control modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-//save changes
+ /**
+   * Handles changes for input and dropdown fields.
+   * @param {Object} e - Event object from input or dropdown change
+   */
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
     console.log("Dropdown changed:", e.target.value);
   };
 
-//submit form
+  /**
+   * Handles form submission.
+   * Dispatches employee data to Redux store and opens confirmation modal.
+   * @param {Object} e - Event object from form submission
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted with data:", formData);
@@ -48,18 +57,15 @@ export default function CreateEmployee() {
     setIsModalOpen(true);
   };
 
-// close modal
+
   const handleModalClose = () => {
     setIsModalOpen(false);
     console.log("Modal closed");
   };
 
-//data for dropdown
+ // Convert states and departments into format suitable for <Dropdown />
   const statesOptions = states.map((s) => ({ label: s.name, value: s.abbreviation }));
   const departmentOptions = departements.map((d) => ({ label: d, value: d }));
-
-
-
 
   return (
     <>

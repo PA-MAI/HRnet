@@ -1,13 +1,17 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-//import data
+
+// Import table column structure
 import { employeeColumns } from "../../data/columns";
-//import composant plugin
+// Import custom data table component
 import DataTable from "../../components/DataTable";
 
 
-
+/**
+ * Component to display the list of current employees in a table format.
+ * Includes search and pagination.
+ */
 export default function EmployeeList() {
   const employees = useSelector((state) => state.employee.list);
   const [search, setSearch] = useState("");

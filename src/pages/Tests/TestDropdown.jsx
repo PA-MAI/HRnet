@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Dropdown } from 'react-drpdwn-ui';
 import states from "../../data/states";
 
+//this test allow /tests url for test responses with React plugin react-drpdwn-ui in dev envirronnement localhost:5173
+
 export default function TestDropdown() {
   const [value, setValue] = useState("");
 
