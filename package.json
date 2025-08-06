@@ -1,18 +1,20 @@
 {
-  "name": "hrnet-app",
+  "name": "hrnet",
   "private": true,
   "version": "1.0.1",
   "type": "module",
   "author": "Pa-Mai",
   "description": "company internal application to create and view employee records.",
+  "homepage": "https://PA-MAI.github.io/hrnet/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview:soutenance": "vite build && vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.9.0",
@@ -27,7 +29,6 @@
     "react-router-dom": "^7.6.0",
     "styled-components": "^6.1.19"
   },
-
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
@@ -36,6 +37,7 @@
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "^16.0.0",
     "json-server": "^1.0.0-beta.3",
     "vite": "^6.3.5",

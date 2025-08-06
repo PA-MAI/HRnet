@@ -6,7 +6,7 @@ The HRNet app was originally developed in jQuery, migrated to React at the reque
 
 ## Identity card
 
-- **Name**: `HRNet`
+- **Name**: `HRnet`
 - **Version**: `1.0.1`
 - **Author**: `Pa-Mai`
 
